@@ -56,6 +56,6 @@ document.body.addEventListener('click', function (event) {
   if (targetY + gifHeight > screenHeight) targetY = screenHeight - gifHeight; // Bottom boundary
 
   // Move the GIF smoothly and apply flipping (scaleX)
-  gif.style.transition = `transform 3.5s linear`;
+  gif.style.transition = `transform 4.0s linear`;
   gif.style.transform = `translate(${targetX}px, ${targetY}px) scaleX(${scaleXDirection})`;
 });
