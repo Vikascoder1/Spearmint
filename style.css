@@ -1,0 +1,51 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* Prevents the body from scrolling */
+  /* }
+  
+  .gif-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  #walkingGif {
+    width: auto;
+    height: 300px; /* Set to the actual size of the GIF */
+  /* } */
+   
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./back3.png'); /* Use the local image */
+    background-size: cover; /* Make the background cover the entire screen */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* Prevents the body from scrolling */
+  }
+  
+  .gif-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  #walkingGif {
+    width: auto;
+    height: 300px; /* Set to the actual size of the GIF */
+  }
+  
