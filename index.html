@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,5 +12,66 @@
   </div>
 
   <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Ensures the GIF doesn't scroll out */
+        }
+        #walkingGif {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: 100px;
+            background-image: url('spearmintleft.gif'); /* Initially facing left */
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="walkingGif"></div>
+
+    <script>
+        const gif = document.getElementById('walkingGif');
+
+        document.body.addEventListener('click', function (event) {
+            // Get the size of the GIF
+            const gifWidth = gif.offsetWidth;
+            const gifHeight = gif.offsetHeight;
+
+            // Get the current position of the GIF
+            const gifRect = gif.getBoundingClientRect();
+            const currentX = gifRect.left;
+            const currentY = gifRect.top;
+
+            // Get the click position
+            const targetX = event.clientX;
+            const targetY = event.clientY;
+
+            // Calculate the direction of movement
+            const horizontalDirection = targetX > currentX ? 'right' : 'left';
+
+            // Ensure the GIF stays within screen boundaries
+            const adjustedTargetX = Math.max(0, Math.min(targetX - gifWidth / 2, window.innerWidth - gifWidth));
+            const adjustedTargetY = Math.max(0, Math.min(targetY - gifHeight / 2, window.innerHeight - gifHeight));
+
+            // Change the GIF to face the correct direction
+            if (horizontalDirection === 'right') {
+                gif.style.backgroundImage = "url('spearmintright.gif')"; // Replace with the right-facing GIF
+            } else {
+                gif.style.backgroundImage = "url('spearmintleft.gif')"; // Replace with the left-facing GIF
+            }
+
+            // Move the GIF smoothly to the new position
+            gif.style.transition = 'transform 5s linear';
+            gif.style.transform = `translate(${adjustedTargetX}px, ${adjustedTargetY}px)`;
+        });
+    </script>
 </body>
 </html>
